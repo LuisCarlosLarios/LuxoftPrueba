@@ -3,7 +3,7 @@ package com.luxoft.movies.models;
 public class SearchArrayObject {
     String Title = "";
     String Poster = "";
-    String id = "";
+    String imdbID = "";
 
     public String getTitle() {
         return Title;
@@ -22,10 +22,10 @@ public class SearchArrayObject {
     }
 
     public String getId() {
-        return id;
+        return imdbID;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.imdbID = id;
     }
 }

@@ -1,5 +1,6 @@
 package com.luxoft.movies.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,15 +35,15 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HomeViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.textView_movie.setText(list.get(position).getTitle());
-        Picasso.get().load(list.get(position).getImage()).into(holder.imageView_poster)
+        Picasso.get().load(list.get(position).getImage()).into(holder.imageView_poster);
 
-        holder.home_container.setOnClickListener(new View.OnClickListener()
+        holder.home_container.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-            listener.onMovieClicked(list.get(position.getId());
-             }
+            public void onClick(View view) {
+                listener.onMovieClicked(list.get(position).getId());
+            }
         });
     }
     @Override

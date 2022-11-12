@@ -1,5 +1,6 @@
 package com.luxoft.movies;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements OnMovieClickListe
 
     @Override
     public void onMovieClicked(String id) {
-        Toast.makeText(MainActivity.this, id, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this,DetailsActivity.class)
+                .putExtra( "data", id));
     }
 }
